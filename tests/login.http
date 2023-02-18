@@ -1,8 +1,21 @@
 ###
-POST http://localhost:3007/login
+POST http://localhost:3007/auth/signup
 Content-Type: application/json
 
 {
-  "username": "abc",
-  "password": 1234
+  "username": "M10",
+  "password": "12345789",
+  "confirmPassword": "12345789",
+  "is_admin": 0,
+  "mobile": "84759213",
+  "email": "m10@gmail.com"
+}
+
+###
+POST http://localhost:3007/auth/signin
+Content-Type: application/json
+
+{
+  "username":"CR70",
+  "password": "12345789"
 }
