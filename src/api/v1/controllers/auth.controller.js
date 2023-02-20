@@ -1,8 +1,8 @@
 const bcrypt = require("bcryptjs/dist/bcrypt");
-const { generatePassword } = require("../helpers/auth.helper");
-const { generateToken } = require("../helpers/generateToken");
+const { generatePassword } = require("../helpers/auth_helper");
+const { generateAccessToken } = require("../helpers/jwt_service");
 
-const db = require('../models')
+const db = require('../models/mysql')
 
 db.role.belongsToMany(db.e_user, {
     through: 'user_roles',
@@ -33,7 +33,7 @@ module.exports = {
             return res.status(400).json({ message: 'Wrong Password!' })
         };
 
-        const token = generateToken(existUser.id, existUser.username);
+        const token = generateAccessToken(existUser.id, existUser.username);
 
         return res.status(200).json({ accessToken: token })
     },
@@ -55,7 +55,7 @@ module.exports = {
         const createUser = await db.e_user.create(dataInsert)
 
         if (createUser) {
-            const token = generateToken(createUser.id, createUser.username)
+            const token = generateAccessToken(createUser.id, createUser.username)
             return res.status(200).json({ accessToken: token, message: 'Success!' })
         }
     }

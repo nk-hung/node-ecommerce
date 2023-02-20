@@ -4,8 +4,8 @@ const Sequelize = require('sequelize');
 // fs.readFileSync('./')
 const basename = path.basename(__filename)
 
-const { mysql } = require('../../../config/mysql.config')
-console.log('mysql', mysql)
+const { mysql } = require('../../../../config/mysql.config')
+
 const sequelize = new Sequelize(mysql.database, mysql.username, mysql.password, mysql);
 
 const db = {}

@@ -7,7 +7,7 @@ Content-Type: application/json
   "password": "12345789",
   "confirmPassword": "12345789",
   "is_admin": 0,
-  "mobile": "84759213",
+  "mobile": "84789213",
   "email": "m10@gmail.com"
 }
 
@@ -19,3 +19,8 @@ Content-Type: application/json
   "username":"CR70",
   "password": "12345789"
 }
+
+
+###
+GET http://localhost:3007/products/getLists
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozLCJ1c2VybmFtZSI6IkNSNzAiLCJpYXQiOjE2NzY4Nzk5MzcsImV4cCI6MTY3Njg4MzUzN30.4sYmDKivVdxSY0DYiwP-pv46ztXMTy9gvb6vGd9rTEc
