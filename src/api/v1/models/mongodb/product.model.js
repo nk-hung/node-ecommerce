@@ -2,14 +2,43 @@ const { Schema } = require('mongoose');
 
 const conn = require('../../helpers/connections_mongodb');
 
-const productsSchema = new Schema({
-  title: String,
+const productSchema = new Schema({
+  productId: { type: Number, require: true },
+  code: String,
+  name: String,
+  brand: String,
   description: String,
-  price: Number,
-  image: String,
-  author: String,
+  release_date: Date,
+  specs: { type: Array, default: [] },
+  comments: {
+    type: Array,
+    default: []
+  }
+}, {
+  collection: 'products',
+  timestamps: true
 })
 
 module.exports = {
-  products: conn.model('products', productsSchema)
+  _products: conn.model('products', productSchema)
 }
+
+
+/* 
+  const productExam = [
+  {
+    "_id": ObjectId("..."),
+    "code": 'CAMERA-01',
+    "brand": 'Kann0n',
+    "description": "asdf",
+    "release_date": ISODate('...'),
+    "weight_g": 367,
+    "comments": [
+      {
+        userId: 1,
+        comment: '...'
+      }
+    ]
+  }
+]
+*/

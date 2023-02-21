@@ -2,7 +2,9 @@ const bcrypt = require("bcryptjs");
 
 module.exports = {
   generatePassword: async (password) => {
-    return await bcrypt.hash(password, 10)
+    const salt = await bcrypt.genSalt(10);
+    const hash = await bcrypt.hash(password, salt);
+    return hash
   },
 }
   ;
