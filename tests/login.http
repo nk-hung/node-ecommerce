@@ -6,7 +6,6 @@ Content-Type: application/json
   "username": "M10",
   "password": "12345789",
   "confirmPassword": "12345789",
-  "is_admin": 0,
   "mobile": "84789213",
   "email": "m10@gmail.com"
 }
@@ -16,11 +15,26 @@ POST http://localhost:3007/auth/signin
 Content-Type: application/json
 
 {
-  "username":"CR70",
+  "username":"M10",
   "password": "12345789"
 }
 
+###
+GET http://localhost:3007/products
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjQwODA1YzA0YzJjMjg3OGJmZjA4ZTNkIiwidXNlcm5hbWUiOiJNMTAiLCJpYXQiOjE2Nzk0NTM3NDMsImV4cCI6MTY3OTQ1NzM0M30.Uk5F43LjRwXy8DvrTBtPZpyXhRdKpMRbxYjenzcgmX8
 
 ###
-GET http://localhost:3007/products/getLists
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozLCJ1c2VybmFtZSI6IkNSNzAiLCJpYXQiOjE2NzY4Nzk5MzcsImV4cCI6MTY3Njg4MzUzN30.4sYmDKivVdxSY0DYiwP-pv46ztXMTy9gvb6vGd9rTEc
+GET http://localhost:3007/products/3
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjQwODA1YzA0YzJjMjg3OGJmZjA4ZTNkIiwidXNlcm5hbWUiOiJNMTAiLCJpYXQiOjE2Nzk0NTM3NDMsImV4cCI6MTY3OTQ1NzM0M30.Uk5F43LjRwXy8DvrTBtPZpyXhRdKpMRbxYjenzcgmX8
+
+###
+POST http://localhost:3007/products
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjQwODA1YzA0YzJjMjg3OGJmZjA4ZTNkIiwidXNlcm5hbWUiOiJNMTAiLCJpYXQiOjE2NzgyNjYwNDUsImV4cCI6MTY3ODI2OTY0NX0.KqDZtsnowPWiCXdyci77rSI3Yn4qcFYMI_ok5trw08I
+
+{
+  "code": "Q6",
+  "name": "Mec C180",
+  "brand": "carPPP",
+  "description": "String"
+}
